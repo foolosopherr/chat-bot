@@ -22,8 +22,8 @@ def configure_retriever(local_folder="data/"):
    """Configures a retriever using documents from a local folder."""
 
    docs = []
-   folder_path = os.path.abspath(local_folder)
-
+   folder_path = local_folder
+   print(os.listdir(folder_path))
    for filename in os.listdir(folder_path):
        filepath = os.path.join(folder_path, filename)
        loader = TextLoader(filepath)
