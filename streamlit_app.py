@@ -6,7 +6,7 @@ from langchain_community.llms import HuggingFaceHub
 from langchain_community.document_loaders import TextLoader
 from langchain.memory import ConversationBufferMemory
 from langchain_community.chat_message_histories import StreamlitChatMessageHistory
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.embeddings.huggingface import HuggingFaceEmbeddings
 from langchain.callbacks.base import BaseCallbackHandler
 from langchain.chains import ConversationalRetrievalChain
 from langchain_community.vectorstores import DocArrayInMemorySearch
@@ -18,7 +18,7 @@ st.title("🦜 LangChain: Chat with Documents")
 
 
 @st.cache_resource(ttl="1h")
-def configure_retriever(local_folder="data/"):
+def configure_retriever(local_folder="./data/"):
    """Configures a retriever using documents from a local folder."""
 
    docs = []
@@ -37,6 +37,8 @@ def configure_retriever(local_folder="data/"):
    model_kwargs = {'device': 'cpu'}
    model_name = 'sentence-transformers/all-MiniLM-L6-v2'
    encode_kwargs = {'normalize_embeddings': False}
+   st.write(splits)
+
    embeddings = HuggingFaceEmbeddings(model_name=model_name, model_kwargs=model_kwargs, encode_kwargs=encode_kwargs)
    vectordb = DocArrayInMemorySearch.from_documents(splits, embeddings)
 
