@@ -9,7 +9,7 @@ from langchain_community.chat_message_histories import StreamlitChatMessageHisto
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.callbacks.base import BaseCallbackHandler
 from langchain.chains import ConversationalRetrievalChain
-from langchain_community.vectorstores.docarray.in_memory import DocArrayInMemorySearch
+from langchain.vectorstores import DocArrayInMemorySearch
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.prompts import PromptTemplate
 
