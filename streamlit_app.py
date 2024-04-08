@@ -135,6 +135,7 @@ PROMPT = PromptTemplate(
 llm = HuggingFaceHub(repo_id='tiiuae/falcon-7b-instruct',
                     huggingfacehub_api_token=hf_api_key,
                     model_kwargs={'temperature': 0, 'max_length': 256},
+                    
                     # prompt=PROMPT,
                     )
 
