@@ -93,7 +93,7 @@ class PrintRetrievalHandler(BaseCallbackHandler):
 #     st.info("Please add your OpenAI API key to continue.")
 #     st.stop()
 
-hf_api_key = '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'
+hf_api_key = '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'
 
 
 
