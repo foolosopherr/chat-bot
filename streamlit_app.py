@@ -35,7 +35,7 @@ def configure_retriever(local_folder="data/"):
 
    # Create embeddings and store in vectordb
    model_kwargs = {'device': 'cpu'}
-   model_name = 'cointegrated/rubert-tiny2'
+   model_name = 'sentence-transformers/all-MiniLM-L6-v2'
    encode_kwargs = {'normalize_embeddings': False}
    embeddings = HuggingFaceEmbeddings(model_name=model_name, model_kwargs=model_kwargs, encode_kwargs=encode_kwargs)
    vectordb = DocArrayInMemorySearch.from_documents(splits, embeddings)
