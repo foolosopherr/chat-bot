@@ -135,7 +135,7 @@ PROMPT = PromptTemplate(
 llm = HuggingFaceHub(repo_id='tiiuae/falcon-7b-instruct',
                     huggingfacehub_api_token=hf_api_key,
                     model_kwargs={'temperature': 0, 'max_length': 256},
-
+                    
                     # prompt=PROMPT,
                     )
 
@@ -161,5 +161,10 @@ if user_query := st.chat_input(placeholder="Ask me anything!"):
 
     with st.chat_message("assistant"):
         retrieval_handler = PrintRetrievalHandler(st.container())
+        st.write(retrieval_handler)
         stream_handler = StreamHandler(st.empty())
-        response = qa_chain.run(user_query, ) #callbacks=[retrieval_handler, stream_handler]
+        st.write(stream_handler)
+
+        st.write(qa_chain)
+
+        response = qa_chain.run(user_query, callbacks=[retrieval_handler, stream_handler])
