@@ -4,8 +4,8 @@ import streamlit as st
 # from langchain.chat_models import ChatOpenAI
 from langchain_community.llms import HuggingFaceHub
 from langchain_community.document_loaders import TextLoader
-from langchain_community.memory import ConversationBufferMemory
-from langchain_community.memory.chat_message_histories import StreamlitChatMessageHistory
+from langchain.memory import ConversationBufferMemory
+from langchain_community.chat_message_histories import StreamlitChatMessageHistory
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.callbacks.base import BaseCallbackHandler
 from langchain.chains import ConversationalRetrievalChain
