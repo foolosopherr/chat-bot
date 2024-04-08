@@ -129,13 +129,13 @@ url: {url}
 """
 
 PROMPT = PromptTemplate(
-template=prompt_template, input_variables=['answer', 'url']
+    template=prompt_template, input_variables=['answer', 'url']
 )
 
-llm = HuggingFaceHub(repo_id='IlyaGusev/fred_t5_ru_turbo_alpaca',
+llm = HuggingFaceHub(repo_id='tiiuae/falcon-7b-instruct',
                     huggingfacehub_api_token=hf_api_key,
-                    model_kwargs={'temperature':0, 'max_length':256},
-                    prompt=PROMPT,
+                    model_kwargs={'temperature': 0, 'max_length': 256},
+                    # prompt=PROMPT,
                     )
 
 
