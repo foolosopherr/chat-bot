@@ -1,0 +1,7 @@
+Unhandled Exception
+
+The server encountered an unhandled exception
+and was unable to complete your request.. Please contact the server administrator, webmaster@misis.ru
+and inform them of the time the error occurred,
+and anything you might have done that may have caused the error.. More information about this error may be available in the Parser error log
+or in debug version of unhandled_exception..
