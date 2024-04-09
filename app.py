@@ -29,6 +29,9 @@ if "vector" not in st.session_state:
 
     st.session_state.text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
     st.session_state.documents = st.session_state.text_splitter.split_documents(st.session_state.docs)
+
+    st.write(st.session_state.documents)
+
     st.session_state.vector = FAISS.from_documents(st.session_state.documents, st.session_state.embeddings)
 
 st.title("Chat with Docs - Groq Edition :) ")
