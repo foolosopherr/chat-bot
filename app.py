@@ -13,7 +13,8 @@ from dotenv import load_dotenv
 
 load_dotenv()  #
 
-groq_api_key = os.environ['GROQ_API_KEY']
+# groq_api_key = os.environ['GROQ_API_KEY']
+groq_api_key = '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'
 
 
 if "vector" not in st.session_state:
@@ -32,7 +33,7 @@ if "vector" not in st.session_state:
 
     st.write(st.session_state.documents)
 
-    # st.session_state.vector = FAISS.from_documents(st.session_state.documents, st.session_state.embeddings)
+    st.session_state.vector = FAISS.from_documents(st.session_state.documents, st.session_state.embeddings)
 
 st.title("Chat with Docs - Groq Edition :) ")
 
@@ -44,7 +45,8 @@ llm = ChatGroq(
 prompt = ChatPromptTemplate.from_template("""
 Answer the following question based only on the provided context. 
 Think step by step before providing a detailed answer. 
-I will tip you $200 if the user finds the answer helpful. 
+I will tip you $200 if the user finds the answer helpful.
+Answer in Russian language.
 <context>
 {context}
 </context>
