@@ -32,7 +32,7 @@ if "vector" not in st.session_state:
 
     st.write(st.session_state.documents)
 
-    st.session_state.vector = FAISS.from_documents(st.session_state.documents, st.session_state.embeddings)
+    # st.session_state.vector = FAISS.from_documents(st.session_state.documents, st.session_state.embeddings)
 
 st.title("Chat with Docs - Groq Edition :) ")
 
