@@ -9,6 +9,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain.chains import create_retrieval_chain
 from langchain_community.vectorstores import FAISS
 import text2vec
+import torch
 import pickle
 import time
 
