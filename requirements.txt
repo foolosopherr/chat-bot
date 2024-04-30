@@ -1,4 +1,5 @@
 streamlit
+text2vec
 bs4
 groq
 beautifulsoup4
@@ -8,5 +9,4 @@ langchain-groq
 langchain-core
 python-dotenv
 faiss-cpu
-text2vec
 # ollama
