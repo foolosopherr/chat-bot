@@ -3,6 +3,7 @@ import os
 from langchain_groq import ChatGroq
 # from langchain_community.document_loaders import WebBaseLoader
 from langchain_community.document_loaders.text import TextLoader
+from langchain_community.document_loaders.directory import DirectoryLoader
 from langchain_community.embeddings.text2vec import Text2vecEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.chains.combine_documents import create_stuff_documents_chain
@@ -29,7 +30,9 @@ groq_api_key=os.environ['GROQ_API_KEY']
 
 if "vector" not in st.session_state:
     st.session_state.embeddings=Text2vecEmbeddings()
-    st.session_state.loader=TextLoader('data/11.txt', encoding = 'UTF-8')
+    # st.session_state.loader=TextLoader('data/11.txt', encoding = 'UTF-8')
+    text_loader_kwargs={'autodetect_encoding': True}
+    st.session_state.loader = DirectoryLoader("data/", glob="./*.txt", loader_cls=TextLoader, loader_kwargs=text_loader_kwargs)
     st.session_state.docs=st.session_state.loader.load()
 
     st.session_state.text_splitter=RecursiveCharacterTextSplitter(chunk_size=1000,chunk_overlap=200)
