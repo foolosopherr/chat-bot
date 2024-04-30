@@ -21,7 +21,7 @@ with open('ind_to_url.pickle', 'rb') as handle:
     ind_to_url = pickle.load(handle)
 
 # webs = [ind_to_url[i] for i in range(100)]
-webs = ['data/{i}.txt' for i in range(100)]
+webs = [f'data/{i}.txt' for i in range(100)]
 # print(webs)
 
 ## load the Groq API key
