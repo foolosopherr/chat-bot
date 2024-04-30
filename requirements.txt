@@ -8,6 +8,5 @@ langchain-groq
 langchain-core
 python-dotenv
 faiss-cpu
-faiss-gpu
 text2vec
 # ollama
