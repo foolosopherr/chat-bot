@@ -29,7 +29,7 @@ groq_api_key=os.environ['GROQ_API_KEY']
 
 if "vector" not in st.session_state:
     st.session_state.embeddings=Text2vecEmbeddings()
-    st.session_state.loader=TextLoader(webs)
+    st.session_state.loader=TextLoader(webs, encoding = 'UTF-8')
     st.session_state.docs=st.session_state.loader.load()
 
     st.session_state.text_splitter=RecursiveCharacterTextSplitter(chunk_size=1000,chunk_overlap=200)
