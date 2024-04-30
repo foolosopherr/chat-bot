@@ -163,6 +163,4 @@ if user_query := st.chat_input(placeholder="Ask me anything!"):
         retrieval_handler = PrintRetrievalHandler(st.container())
         stream_handler = StreamHandler(st.empty())
 
-        st.write(user_query)
-
         response = qa_chain.run(user_query, callbacks=[retrieval_handler, stream_handler])
