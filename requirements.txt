@@ -1,5 +1,6 @@
 streamlit
 text2vec
+torch
 bs4
 groq
 beautifulsoup4
