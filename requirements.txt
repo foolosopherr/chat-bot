@@ -1,8 +1,13 @@
 streamlit
+bs4
 groq
-langchain
-langchain-groq
-python-dotenv
 beautifulsoup4
+langchain
+langchain-community
+langchain-groq
+langchain-core
+python-dotenv
 faiss-cpu
-ollama
+faiss-gpu
+text2vec
+# ollama
